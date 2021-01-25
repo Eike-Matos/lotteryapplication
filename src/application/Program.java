@@ -2,7 +2,9 @@ package application;
 
 import java.util.Scanner;
 
+import entities.Dados;
 import entities.LotteryApplication;
+
 
 public class Program {
 
@@ -18,6 +20,16 @@ public class Program {
 		int numberOfMatchedNumbers = 0;
 		
 		LotteryApplication megaSena = new LotteryApplication( NUMBER_OF_LOTTERY_NUMBERS);
+		
+		Dados dados = new Dados();
+		System.out.println("Qual seu nome?");
+		String nome = sc.nextLine();
+		System.out.println("Qual seu e-mail?");
+		String email = sc.nextLine();
+		System.out.println("Seja bem vindo a Mega Sena" + " " + nome + " "+ email );
+		System.out.println("Faça sua aposta!");
+		
+		System.out.println();
 		
 		for(int currentLotteryNumberIndex = 0; currentLotteryNumberIndex < NUMBER_OF_LOTTERY_NUMBERS; currentLotteryNumberIndex ++) {
 			System.out.println("Digite o primeiro desejado nº " + (currentLotteryNumberIndex + 1) );
