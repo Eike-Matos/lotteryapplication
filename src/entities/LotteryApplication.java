@@ -11,13 +11,24 @@ public class LotteryApplication {
 		userLotteryNumbers = userLotteryNumbersGiven;
 	}
 	
+	public int [] getLotteryNumbers() {
+		return lotteryNumbers;
+	}
+	
 	public int [] compareLotteryNumbers() {
 		int[] matchedNumbers = new int [lotteryNumbers.length];
+		
+		for (int currentMatchedNumberIndex = 0; currentMatchedNumberIndex < matchedNumbers.length; currentMatchedNumberIndex ++) {
+			matchedNumbers[ currentMatchedNumberIndex ] = -1;
+		}
 				
 		for(int currentUserLotteryNumberIndex = 0; currentUserLotteryNumberIndex < userLotteryNumbers.length; currentUserLotteryNumberIndex ++) {
 			if (userLotteryNumbers[ currentUserLotteryNumberIndex] == lotteryNumbers[ currentUserLotteryNumberIndex ] ) {
+				matchedNumbers[ currentUserLotteryNumberIndex ] = userLotteryNumbers[ currentUserLotteryNumberIndex];
 	        }
 		}
+		
+		return matchedNumbers;
 	}
 	
 	public LotteryApplication( int numberOfLotteryNumbers) {
